@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     textDecoration: 'none',
     fontSize: 15,
     color: '#000000de',
+    lineHeight: 2,
   },
 }));
 

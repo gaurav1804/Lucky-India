@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Grid, Box } from '@material-ui/core';
-import elearning from './images/bannerheader.jpg';
+import elearning from './images/maxresdefault.jpg';
 import MenuBar from '../../components/menubar';
 import Footer from '../../components/footer';
 
@@ -52,21 +52,7 @@ const Home: React.FC<Props> = (props: Props) => {
         <Box style={{backgroundImage: 'linear-gradient(to right, #fff, #f2f9f8)'}}>
           <Container component="main" className={classes.main}>
             <Grid container direction="row" spacing={0}>
-              <Grid item xs={12} sm={3}>
-                <div>
-                  Its an education game
-                </div>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <div style={{height: 360, marginBottom: 30}}>
-                  <img src={elearning} width="85%" alt="elearning" style={{borderRadius: 8, border: '1px solid #000'}}></img>
-                </div>
-              </Grid>
-              <Grid item xs={12} sm={3}>
-                <div> Quiz game </div>
-                <div> Lucky Quiz </div>
-                <div> Wonder Quiz </div>
-              </Grid>
+              <img src={elearning} width="100%" alt="elearning" style={{border: '1px solid #000'}}></img>
             </Grid>
           </Container>
         </Box>
