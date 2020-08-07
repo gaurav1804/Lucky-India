@@ -5,8 +5,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 import ListItem, { ListItemProps } from '@material-ui/core/ListItem';
 
@@ -22,8 +20,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   linkText: {
     textDecoration: 'none',
-    fontSize: 15,
-    color: '#000000de',
+    fontSize: 16,
+    color: '#ffffff',
     lineHeight: 2,
   },
 }));
@@ -44,7 +42,7 @@ const MenuBar: React.FC<Props> = (props: Props) => {
 
   return (
     <Box>
-      <AppBar position="static" color="default" elevation={0}>
+      <AppBar position="static" color="default" elevation={0} style={{background: '#000000'}}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             <Link to={'/'} className={classes.linkText}>Lucky Quiz</Link>
