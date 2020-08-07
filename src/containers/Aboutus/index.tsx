@@ -7,7 +7,7 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import { Grid, Box } from '@material-ui/core';
-import elearning from '../Home/images/quizshow.png';
+import elearning from '../Home/images/quizshow.jpg';
 import MenuBar from '../../components/menubar';
 import Footer from '../../components/footer';
 
