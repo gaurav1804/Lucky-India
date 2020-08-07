@@ -6,6 +6,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Typography from '@material-ui/core/Typography';
+import elearning from '../Home/images/quizshow.jpg';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import { Grid, Box } from '@material-ui/core';
@@ -21,7 +23,6 @@ const useStyles = makeStyles((theme) => createStyles({
     background: '#fff',
   },
   main: {
-    paddingTop: 60,
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(2),
   },
@@ -102,29 +103,58 @@ const Quiz: React.FC = () => {
     <div>
       <MenuBar></MenuBar>
       <div className={classes.root}>
+      <Box style={{ background: 'linear-gradient(to right, #6681ea, #7e43aa)' }}>
+          <Container component="main" className={classes.main}>
+            <Grid container direction="row" spacing={0}>
+              <Grid item xs={12} sm={6}>
+                <div style={{ padding: 15 }}>
+                  <Typography variant="h2" component="h6" gutterBottom>
+                    <span style={{ color: '#fff' }}>DIGITAL WORLD </span> <span style={{ color: '#fff' }}> OF </span>
+                    <span style={{ color: '#fff' }}> GAMING</span>
+                  </Typography>
+                  <Typography variant="h6">
+                    {
+                      'Lucky Quiz has group of experties that work together to develop and execute bold visions – resulting in innovative strategy, leading performance, remarkable visibility, and award-winning experiences for our users.'
+                    }
+                  </Typography>
+                </div>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <div style={{ marginBottom: 30, textAlign: 'center' }}>
+                  <img
+                    src={elearning}
+                    width="70%"
+                    alt="elearning"
+                    style={{borderRadius: 15}}
+                  ></img>
+                </div>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
         <Box style={{backgroundImage: 'linear-gradient(to right, #fff, #f2f9f8)'}}>
         	<Container component="main" className={classes.main}>
-				<Grid container direction="row" spacing={0}>
-					<Grid item xs={12}>
-						<h3>Filter by date</h3>
-						<input type="date"></input>
-					</Grid>
-				</Grid>
-				<Grid container direction="row" spacing={0}>
-				<Grid item xs={12} sm={4}>
-					<h2>Fun Quiz</h2>
-					{renderTable()}
-				</Grid>
-				<Grid item xs={12} sm={4}>
-					<h2>Wonder Quiz</h2>
-					{renderTable()}
-				</Grid>
-				<Grid item xs={12} sm={4}>
-					<h2>Lucky Quiz</h2>
-					{renderTable()}
-				</Grid>
-				</Grid>
-			</Container>
+            <Grid container direction="row" spacing={0}>
+              <Grid item xs={12}>
+                <h3>Filter by date</h3>
+                <input type="date"></input>
+              </Grid>
+            </Grid>
+            <Grid container direction="row" spacing={0}>
+              <Grid item xs={12} sm={4}>
+                <h2>Fun Quiz</h2>
+                {renderTable()}
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <h2>Wonder Quiz</h2>
+                {renderTable()}
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <h2>Lucky Quiz</h2>
+                {renderTable()}
+              </Grid>
+				    </Grid>
+			    </Container>
         </Box>
         <Footer></Footer>
       </div>
