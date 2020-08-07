@@ -81,6 +81,7 @@ const Contact: React.FC = () => {
                     src={elearning}
                     width="70%"
                     alt="elearning"
+                    style={{borderRadius: 15}}
                   ></img>
                 </div>
               </Grid>

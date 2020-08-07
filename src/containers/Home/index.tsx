@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => createStyles({
     padding: 10,
     borderRadius: 5,
     textDecoration: 'none',
-    fontSize: 15,
+    fontSize: 18,
     color: '#000000de',
   },
 }),
@@ -83,11 +83,12 @@ const Home: React.FC<Props> = (props: Props) => {
                 </div>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <div style={{marginBottom: 30, textAlign: 'center' }}>
+                <div style={{ marginBottom: 30, textAlign: 'center' }}>
                   <img
                     src={elearning}
                     width="70%"
                     alt="elearning"
+                    style={{borderRadius: 15}}
                   ></img>
                 </div>
               </Grid>
@@ -134,7 +135,7 @@ const Home: React.FC<Props> = (props: Props) => {
               <Grid item xs={12} sm={4}>
                 <div style={{ padding: 10 }}>
                   <div style={{background: 'linear-gradient(to right, #6681ea, #7e43aa)' , borderRadius: 5, padding: 10}}>
-                    <span>Quiz Game</span>
+                    <span style={{fontSize: 20}}>Quiz Game</span>
                   </div>
                   <div>
                     <h4>Fun Quiz</h4>
