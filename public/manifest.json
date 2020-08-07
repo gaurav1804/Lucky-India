@@ -1,0 +1,8 @@
+{
+  "short_name": "E learning App",
+  "name": "Created by Gaurav",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Sen&display=swap:300,300i,400,400i,700,700i|Poppins:300,400,500,700');
+
+body {
+  margin: 0;
+  font-family: "Sen", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
