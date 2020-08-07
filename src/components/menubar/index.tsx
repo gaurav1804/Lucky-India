@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
+    fontSize: 16,
     flexGrow: 1,
   },
   linkText: {
@@ -44,8 +45,8 @@ const MenuBar: React.FC<Props> = (props: Props) => {
     <Box>
       <AppBar position="static" color="default" elevation={0} style={{background: '#000000'}}>
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            <Link to={'/'} className={classes.linkText}>Lucky Quiz</Link>
+          <Typography className={classes.title}>
+            <Link to={'/'} className={classes.linkText}>LUCKY QUIZ</Link>
           </Typography>
           <Button color="inherit">
             <Link to={'/aboutus'} className={classes.linkText}>About</Link>

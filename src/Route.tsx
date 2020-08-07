@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './containers/Home';
 import Aboutus from './containers/Aboutus';
 import Quiz from './containers/Quiz';
+import Contact from './containers/Contact';
 
 const Routes = () => (
   <Router basename="/apps">
@@ -13,6 +14,9 @@ const Routes = () => (
       </Route>
       <Route path="/quiz">
         <Quiz/>
+      </Route>
+      <Route path="/contact">
+        <Contact/>
       </Route>
       <Route path="/">
         <Home/>

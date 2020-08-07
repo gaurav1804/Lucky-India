@@ -75,26 +75,26 @@ const Quiz: React.FC = () => {
 
       return (
         <TableContainer component={Paper} style={{width: '80%'}}>
-			<Table aria-label="simple table">
-				<TableHead>
-					<TableRow>
-						<TableCell>Time</TableCell>
-						<TableCell align="right">Title No.</TableCell>
-						<TableCell align="left">Optional details</TableCell>
-					</TableRow>
-				</TableHead>
-			<TableBody>
-				{rows.map((row, i) => (
-				<TableRow key={i}>
-					<TableCell component="th" scope="row">
-					{row.time}
-					</TableCell>
-					<TableCell align="right">{row.title}</TableCell>
-					<TableCell align="left">{row.detail}</TableCell>
-				</TableRow>
-				))}
-			</TableBody>
-			</Table>
+          <Table aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>Time</TableCell>
+                <TableCell align="right">Title No.</TableCell>
+                <TableCell align="left">Optional details</TableCell>
+              </TableRow>
+            </TableHead>
+          <TableBody>
+            {rows.map((row, i) => (
+            <TableRow key={i}>
+              <TableCell component="th" scope="row">
+              {row.time}
+              </TableCell>
+              <TableCell align="right">{row.title}</TableCell>
+              <TableCell align="left">{row.detail}</TableCell>
+            </TableRow>
+            ))}
+          </TableBody>
+          </Table>
       	</TableContainer>
       )
   }

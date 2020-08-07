@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Divider } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -47,7 +46,7 @@ const useStyles = makeStyles((theme) => createStyles({
 }),
 );
 
-const Aboutus: React.FC = () => {
+const Contact: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -90,45 +89,10 @@ const Aboutus: React.FC = () => {
         </Box>
         <Box>
           <Container>
-            <h1 style={{textAlign: 'center', color: '#0060d3'}}>About Us</h1>
-            <Grid container spacing={3} style={{ padding: '0px 80px 0px 80px' }}>
-              <Grid item xs={12}>
-                <Typography variant="body1" className={classes.paper}>Our Idea is to help anyone find their perfect tutor so they can achieve their learning goals. Whiz can assist learners with constructive advice to help.</Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Paper className={classes.paper}>
-                  <h1 style={{color: '#4599fd'}}>Where did we start</h1>
-                  <Typography variant="body1">Lucky Quiz founders and business analyst created quiz platform in 2020 with an ingenious objective to take the hassle out of finding online quiz game.
-                    It was Born out of faith that by bringing all the best possibilities together in one place which help anyone to find the perfect quiz game. We are still stepping forward with this belief.
-                  </Typography>
-                </Paper>
-              </Grid>
-            </Grid>
-            <Grid container spacing={3} style={{ padding: '20px 80px 0px 80px' }}>
-              <Grid item xs={12}>
-                <Paper className={classes.paper}>
-                  <h1 style={{color: '#23c176'}}>How have we maturated</h1>
-                  <Typography variant="body1">Since our establishment we've grown to become the leading marketplace for quiz gaming.
-                    In the meantime Lucky Quiz trying to built a platform that allows anyone to manage their brain and skill.
-                  </Typography>
-                </Paper>
-              </Grid>
-            </Grid>
-            <Grid container spacing={3} style={{ padding: '20px 80px 0px 80px' }}>
-              <Grid item xs={12}>
-                <Paper className={classes.paper}>
-                  <h1 style={{color: '#6267ab'}}>Where are we going</h1>
-                  <Typography variant="body1">
-                    <div style={{paddingBottom: 10}}>
-                      Intrinsically quiz can help learners to boost their confidence and learn a new skill. We have a master plan to carry on with helping people to meet their gaming goals. We are committed to facilitating as many people as possible with access to great quiz.
-                    </div><Divider/> 
-                    <div style={{paddingTop: 10}}>
-                      Lucky quiz has group of experties that work together to develop and execute bold visions – resulting in innovative strategy, leading performance, remarkable visibility, and award-winning experiences for our users.
-                    </div>
-                  </Typography>
-                </Paper>
-              </Grid>
-            </Grid>
+            <h1>Contact Us</h1>
+            <div>
+              <p>Customer Care Enquiry Mobile / WhatsApp: +91 80810 08878 (Mr. BabuLuck)</p>
+            </div>
           </Container>
         </Box>
         <Footer></Footer>
@@ -137,4 +101,4 @@ const Aboutus: React.FC = () => {
   );
 }
 
-export default Aboutus;
+export default Contact;

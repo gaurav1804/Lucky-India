@@ -24,11 +24,6 @@ const useStyles = makeStyles((theme) => createStyles({
   button: {
     margin: theme.spacing(1, 1, 0, 0),
   },
-  tutors: {
-    background: '#fff',
-    textAlign: 'center',
-    paddingTop: 10,
-  },
   boxWhite: {
     minHeight: 125,
     background: '#fff',
@@ -91,7 +86,7 @@ const Home: React.FC<Props> = (props: Props) => {
                 <div style={{marginBottom: 30, textAlign: 'center' }}>
                   <img
                     src={elearning}
-                    width="80%"
+                    width="70%"
                     alt="elearning"
                   ></img>
                 </div>
