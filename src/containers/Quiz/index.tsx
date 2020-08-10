@@ -54,25 +54,55 @@ const useStyles = makeStyles((theme) => createStyles({
 
 const Quiz: React.FC = () => {
   const classes = useStyles();
+  const [quizData, setQuizData] = React.useState<any>();
+  const [filteredData, setFilteredData] = React.useState<any>();
 
-  const createData = (time: string, title: number, detail: string) => {
-	return { time, title, detail };
+  const formatDate = (date: Date) => {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+  }
+  
+  const filterQuiz = (date: any) => {
+    const newList = quizData.filter((d: any) => {
+      return d.date === date;
+    });
+    setFilteredData(newList);
+  }
+  
+  const filterTodayQuiz = (quiz: any) => {
+    let today = new Date();
+
+    const newList = quiz.filter((d: any) => {
+      return d.date === formatDate(today);
+    });
+
+    setFilteredData(newList);
+  }
+
+  const handleDate = (event: any) => {
+    const date = event.target.value;
+    filterQuiz(date);
   }
 
   useEffect(() => {
     const getQuiz = async() => {
-      let newQuiz:any = await getQuizList();
-      console.log(newQuiz);
+      let newQuizData:any = await getQuizList();
+      setQuizData(newQuizData);
+      filterTodayQuiz(newQuizData);
     }
     getQuiz();
   }, []);
 
-  const renderTable = () => {
-	const rows = [
-		createData('11:35 00 45', 159, 'One Girl Said, This will make it better'),
-		createData('11:35 00 45', 237, 'One Girl Said, This will make it better'),
-		createData('11:35 00 45', 262, 'One Girl Said, This will make it better'),
-	];
+  const renderTable = (type: string) => {
 
       return (
         <TableContainer component={Paper} style={{width: '80%'}}>
@@ -85,14 +115,17 @@ const Quiz: React.FC = () => {
               </TableRow>
             </TableHead>
           <TableBody>
-            {rows.map((row, i) => (
-            <TableRow key={i}>
-              <TableCell component="th" scope="row">
-              {row.time}
-              </TableCell>
-              <TableCell align="right">{row.title}</TableCell>
-              <TableCell align="left">{row.detail}</TableCell>
-            </TableRow>
+            {filteredData && filteredData.map((row: any) => (
+              <TableRow key={row.id}>
+                { row.quizType === type ? <>
+                    <TableCell component="th" scope="row">
+                    {row.startTime} - {row.EndTime}
+                    </TableCell>
+                    <TableCell align="right">{row.titleNumber}</TableCell>
+                    <TableCell align="left">{row.optionDetail}</TableCell>
+                  </> : <></> 
+                }
+              </TableRow>
             ))}
           </TableBody>
           </Table>
@@ -137,21 +170,21 @@ const Quiz: React.FC = () => {
             <Grid container direction="row" spacing={0}>
               <Grid item xs={12}>
                 <h3>Filter by date</h3>
-                <input type="date"></input>
+                <input type="date" onChange={handleDate}></input>
               </Grid>
             </Grid>
             <Grid container direction="row" spacing={0}>
               <Grid item xs={12} sm={4}>
                 <h2>Fun Quiz</h2>
-                {renderTable()}
+                {renderTable('FunQuiz')}
               </Grid>
               <Grid item xs={12} sm={4}>
                 <h2>Wonder Quiz</h2>
-                {renderTable()}
+                {renderTable('WonderQuiz')}
               </Grid>
               <Grid item xs={12} sm={4}>
                 <h2>Lucky Quiz</h2>
-                {renderTable()}
+                {renderTable('LuckyQuiz')}
               </Grid>
 				    </Grid>
 			    </Container>
