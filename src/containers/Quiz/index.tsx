@@ -1,13 +1,12 @@
 import React, {useEffect} from 'react';
-import { makeStyles, createStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles, createMuiTheme, ThemeProvider, useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Typography from '@material-ui/core/Typography';
-import elearning from '../Home/images/quizshow.jpg';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import { Grid, Box } from '@material-ui/core';
@@ -21,10 +20,6 @@ const useStyles = makeStyles((theme) => createStyles({
     flexDirection: 'column',
     minHeight: '100vh',
     background: '#fff',
-  },
-  main: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(2),
   },
   button: {
     margin: theme.spacing(1, 1, 0, 0),
@@ -56,6 +51,8 @@ const Quiz: React.FC = () => {
   const classes = useStyles();
   const [quizData, setQuizData] = React.useState<any>();
   const [filteredData, setFilteredData] = React.useState<any>();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
   const formatDate = (date: Date) => {
     var d = new Date(date),
@@ -103,7 +100,7 @@ const Quiz: React.FC = () => {
     let mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "00";
     return hDisplay + mDisplay; 
   }
-    
+
   useEffect(() => {
     const getQuiz = async() => {
       let newQuizData:any = await getQuizList();    
@@ -147,37 +144,19 @@ const Quiz: React.FC = () => {
     <div>
       <MenuBar></MenuBar>
       <div className={classes.root}>
-      <Box style={{ background: 'linear-gradient(to right, #6681ea, #7e43aa)' }}>
-          <Container component="main" className={classes.main}>
-            <Grid container direction="row" spacing={0}>
+        <Box style={{ background: 'linear-gradient(to right, #FF0000, #8B0000)' }}>
+          <Container>
+            <Grid container direction="row">
               <Grid item xs={12} sm={6}>
-                <div style={{ padding: 15 }}>
-                  <Typography variant="h2" component="h6" gutterBottom>
-                    <span style={{ color: '#fff' }}>DIGITAL WORLD </span> <span style={{ color: '#fff' }}> OF </span>
-                    <span style={{ color: '#fff' }}> GAMING</span>
-                  </Typography>
-                  <Typography variant="h6">
-                    {
-                      'Lucky Quiz has group of experties that work together to develop and execute bold visions – resulting in innovative strategy, leading performance, remarkable visibility, and award-winning experiences for our users.'
-                    }
-                  </Typography>
-                </div>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <div style={{ marginBottom: 30, textAlign: 'center' }}>
-                  <img
-                    src={elearning}
-                    width="70%"
-                    alt="elearning"
-                    style={{borderRadius: 15}}
-                  ></img>
-                </div>
+                {
+                  matches ? <h1 style={{fontFamily: 'georgia', color: '#ffffff'}}>Welcome to Luck World</h1> : <h3 style={{fontFamily: 'georgia', color: '#ffffff'}}>Welcome to Luck World</h3>
+                }
               </Grid>
             </Grid>
           </Container>
         </Box>
         <Box style={{backgroundImage: 'linear-gradient(to right, #fff, #f2f9f8)'}}>
-        	<Container component="main" className={classes.main}>
+        	<Container component="main" style={{paddingTop: 10}}>
             <Grid container direction="row" spacing={0}>
               <Grid item xs={12}>
                 <h3>Filter by date</h3>
