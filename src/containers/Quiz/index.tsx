@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { makeStyles, createStyles, createMuiTheme, ThemeProvider, useTheme } from '@material-ui/core/styles';
+import { makeStyles, createStyles, useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -94,10 +94,10 @@ const Quiz: React.FC = () => {
     d = Number(d);
     let h = Math.floor(d / 3600);
     let m = Math.floor(d % 3600 / 60);
-    let s = Math.floor(d % 3600 % 60);
+    // let s = Math.floor(d % 3600 % 60);
 
     let hDisplay = h > 0 ? h + ':' : '00';
-    let mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "00";
+    let mDisplay = m > 0 ? m + (m === 1 ? " minute, " : " minutes, ") : "00";
     return hDisplay + mDisplay; 
   }
 
