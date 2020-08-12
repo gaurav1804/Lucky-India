@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import { Grid, Box } from '@material-ui/core';
 import elearning from '../Home/images/quizshow.jpg';

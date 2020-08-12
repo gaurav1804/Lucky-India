@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           <Grid item xs={12} sm={2}>
           </Grid>
           <Grid item xs={12} sm={3}>
-            <p>Copyright 2020 @</p>
+            <p>Copyright 2020</p>
           </Grid>
         </Grid>
       </Container>

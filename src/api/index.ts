@@ -1,5 +1,4 @@
 import { base } from '../config';
-import { AnyARecord } from 'dns';
 
 export const getQuizList = async() => {
     let allQuiz: any = [];

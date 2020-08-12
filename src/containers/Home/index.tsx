@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Grid, Box } from '@material-ui/core';
@@ -9,7 +9,6 @@ import quiz from './images/quiznight.jpg';
 import MenuBar from '../../components/menubar';
 import Footer from '../../components/footer';
 import Button from '@material-ui/core/Button';
-import { url } from 'inspector';
 
 const useStyles = makeStyles((theme) => createStyles({
   root: {
@@ -60,7 +59,6 @@ const useStyles = makeStyles((theme) => createStyles({
 
 const Home: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
-  const history = useHistory();
 
   return (
     <div>

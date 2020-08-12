@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, useTheme, Theme, Divider } from '@material-ui/core';
+import { Box, Theme } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import ListItem, { ListItemProps } from '@material-ui/core/ListItem';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -29,17 +28,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const MenuBar: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
-  const theme = useTheme();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  function ListItemLink(props: ListItemProps<'a', { button?: true }>) {
-    return <ListItem button component="a" {...props} />;
-  }
 
   return (
     <Box>
