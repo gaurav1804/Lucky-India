@@ -93,10 +93,21 @@ const Quiz: React.FC = () => {
     filterQuiz(date);
   }
 
+  const secondsToHM = (d: any) => {
+    d = Number(d);
+    let h = Math.floor(d / 3600);
+    let m = Math.floor(d % 3600 / 60);
+    let s = Math.floor(d % 3600 % 60);
+
+    let hDisplay = h > 0 ? h + ':' : '00';
+    let mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "00";
+    return hDisplay + mDisplay; 
+  }
+    
   useEffect(() => {
     const getQuiz = async() => {
-      let newQuizData:any = await getQuizList();
-      setQuizData(newQuizData);
+      let newQuizData:any = await getQuizList();    
+      setQuizData(newQuizData.sort((a: any, b: any) => parseFloat(a.startTime) - parseFloat(b.startTime)));
       filterTodayQuiz(newQuizData);
     }
     getQuiz();
@@ -119,7 +130,7 @@ const Quiz: React.FC = () => {
               <TableRow key={row.id}>
                 { row.quizType === type ? <>
                     <TableCell component="th" scope="row">
-                    {row.startTime} - {row.EndTime}
+                    {secondsToHM(row.startTime)} - {secondsToHM(row.EndTime)}
                     </TableCell>
                     <TableCell align="right">{row.titleNumber}</TableCell>
                     <TableCell align="left">{row.optionDetail}</TableCell>
