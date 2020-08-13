@@ -1,7 +1,7 @@
 {
   "name": "lucky-ui",
   "version": "0.1.0",
-  "homepage": "http://luckworlds.com/apps",
+  "homepage": "http://luckworlds.com",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.9",
