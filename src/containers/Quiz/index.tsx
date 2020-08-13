@@ -13,6 +13,7 @@ import { Grid, Box } from '@material-ui/core';
 import MenuBar from '../../components/menubar';
 import Footer from '../../components/footer';
 import { getQuizList } from '../../api';
+import imageBanner from './images/banner.jpg'
 
 const useStyles = makeStyles((theme) => createStyles({
   root: {
@@ -149,7 +150,7 @@ const Quiz: React.FC = () => {
             <Grid container direction="row">
               <Grid item xs={12} sm={6}>
                 {
-                  matches ? <h1 style={{fontFamily: 'georgia', color: '#ffffff'}}>Welcome to Luck World</h1> : <h3 style={{fontFamily: 'georgia', color: '#ffffff'}}>Welcome to Luck World</h3>
+                  matches ? <h1 style={{fontFamily: 'georgia', color: '#ffffff'}}>Welcome to Luck World</h1> : <img src={imageBanner} style={{width: '100%'}}></img>
                 }
               </Grid>
             </Grid>
