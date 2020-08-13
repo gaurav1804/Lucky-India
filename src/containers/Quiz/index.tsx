@@ -150,7 +150,7 @@ const Quiz: React.FC = () => {
             <Grid container direction="row">
               <Grid item xs={12} sm={6}>
                 {
-                  matches ? <h1 style={{fontFamily: 'georgia', color: '#ffffff'}}>Welcome to Luck World</h1> : <img src={imageBanner} style={{width: '100%'}}></img>
+                  matches ? <h1 style={{fontFamily: 'georgia', color: '#ffffff'}}>Welcome to Luck World</h1> : <img src={imageBanner} style={{width: '100%'}} alt={imageBanner}></img>
                 }
               </Grid>
             </Grid>

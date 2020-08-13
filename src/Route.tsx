@@ -7,7 +7,7 @@ import Quiz from './containers/Quiz';
 import Contact from './containers/Contact';
 
 const Routes = () => (
-  <Router basename="">
+  <Router>
     <Switch>
       <Route path="/aboutus">
         <Aboutus/>
