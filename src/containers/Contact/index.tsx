@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
           <Container>
             <h1>Contact Us</h1>
             <div>
-              <p>Customer Care Enquiry Mobile / WhatsApp: +91 80810 08878 (Mr. BabuLuck)</p>
+              <p>Customer Care Enquiry Mobile / WhatsApp: +91 97953 54940 (Mr. Ankit)</p>
             </div>
           </Container>
         </Box>
